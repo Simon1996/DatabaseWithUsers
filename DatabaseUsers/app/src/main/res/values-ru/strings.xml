@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Test Project</string>
+    <string name="first_name">Имя:</string>
+    <string name="last_name">Фамилия:</string>
+    <string name="year">Дата рождения:</string>
+    <string name="choose_date">Выберите дату</string>
+    <string name="alert_dialog_title">Добавить нового пользователя:</string>
+</resources>
