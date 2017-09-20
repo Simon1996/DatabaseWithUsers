@@ -1,9 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/del_all"
+        android:icon="@drawable/ic_del"
+        
+        app:showAsAction="ifRoom"
+        android:title="Add users">
+    </item>
+
     <item
         android:id="@+id/add_user"
         android:icon="@drawable/ic_add"
         app:showAsAction="ifRoom"
-        android:title="Add users">
+        android:title="Delete all">
     </item>
+
 </menu>

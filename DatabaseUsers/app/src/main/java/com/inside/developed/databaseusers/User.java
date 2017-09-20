@@ -5,16 +5,22 @@ package com.inside.developed.databaseusers;
  */
 
 public class User {
-    private String firstName, lastName, year;
+    private String id, firstName, lastName, year;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, String year) {
+    public User(String id, String firstName, String lastName, String year) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.year = year;
     }
+
+    public String getId() {
+        return id;
+    }
+
     public String getFirstName() {
         return firstName;
     }

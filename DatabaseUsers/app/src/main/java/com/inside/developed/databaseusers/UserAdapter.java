@@ -42,6 +42,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
 
                         Intent intent = new Intent(v.getContext(), UserActivity.class);
+                        intent.putExtra("id", userList.get(pos).getId());
                         intent.putExtra("firstName", userList.get(pos).getFirstName());
                         intent.putExtra("lastName",userList.get(pos).getLastName());
                         intent.putExtra("year", userList.get(pos).getYear());
@@ -75,6 +76,5 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
         return userList.size();
     }
-
 
 }
