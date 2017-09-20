@@ -5,4 +5,7 @@
     <string name="year">Дата рождения:</string>
     <string name="choose_date">Выберите дату</string>
     <string name="alert_dialog_title">Добавить нового пользователя:</string>
+    <string name="edt_firstname">имя</string>
+    <string name="edt_lastname">фамилия</string>
+    <string name="edt_year">дата рождения</string>
 </resources>

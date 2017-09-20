@@ -15,13 +15,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
 
-        super(context, "myDB", null, 1);
+        super(context, "user", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         Log.d(LOG_TAG, "--- onCreate database ---");
-        db.execSQL("create table users ("
+        db.execSQL("create table user ("
                 + "id integer primary key autoincrement,"
                 + "firstname text,"
                 + "lastname text,"

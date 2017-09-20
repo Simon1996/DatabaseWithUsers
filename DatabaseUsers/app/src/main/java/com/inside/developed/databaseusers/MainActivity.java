@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     ContentValues cv;
     SQLiteDatabase db;
     EditText year, firstName, lastName;
-
     Calendar myCalendar = Calendar.getInstance();
 
     @Override
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         dbHelper = new DBHelper(this);
         cv = new ContentValues();
-        db = dbHelper.getWritableDatabase();
+
 
         prepareUserData();
 
@@ -141,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                         cv.put("firstname", fName);
                         cv.put("lastname", lName);
                         cv.put("year", yYear);
-
+                        long rowID = db.insert("user", null, cv);
                         Toast.makeText(MainActivity.this, "Saved", Toast.LENGTH_SHORT).show();
                         dbHelper.close();
                         userList.clear();
@@ -167,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.del_all:
                 db = dbHelper.getWritableDatabase();
-                int clearCount = db.delete("users", null, null);
+                int clearCount = db.delete("user", null, null);
                 Toast.makeText(MainActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
                 dbHelper.close();
                 userList.clear();
@@ -186,10 +185,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void prepareUserData() {
+
+
         db = dbHelper.getWritableDatabase();
         Log.d(LOG_TAG, "--- Rows in mytable: ---");
         // делаем запрос всех данных из таблицы USERS, получаем Cursor
-        Cursor c = db.query("users", null, null, null, null, null, null);
+        Cursor c = db.query("user", null, null, null, null, null, null);
 
         if (c.moveToFirst()) {
 
@@ -201,11 +202,11 @@ public class MainActivity extends AppCompatActivity {
             do {
                 User user = new User(c.getString(idColIndex),c.getString(firstnameColIndex), c.getString(lastnameColIndex), c.getString(yearColIndex));
                 userList.add(user);
+
             } while (c.moveToNext());
         } else
             Log.d(LOG_TAG, "0 rows");
         c.close();
-
         dbHelper.close();
 
 

@@ -105,7 +105,7 @@ public class UserActivity extends AppCompatActivity {
                 cv.put("lastname",  lastName.getText().toString());
                 cv.put("year",  year.getText().toString());
                 // обновляем по id
-                int updCount = db.update("users", cv, "id = ?",
+                int updCount = db.update("user", cv, "id = ?",
                         new String[] { id });
 
                 dbHelper.close();
